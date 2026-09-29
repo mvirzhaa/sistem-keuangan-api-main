@@ -1,0 +1,16 @@
+{
+  "jenisUser": [
+    {
+      "id": 1,
+      "nama": "Mahasiswa"
+    },
+    {
+      "id": 2,
+      "nama": "Pendaftar"
+    },
+    {
+      "id": 3,
+      "nama": "Mahasiswa & Pendaftar"
+    }
+  ]
+}

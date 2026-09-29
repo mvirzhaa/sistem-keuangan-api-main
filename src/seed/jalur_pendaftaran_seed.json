@@ -1,0 +1,124 @@
+{
+  "jalurPendaftaran": [
+    {
+      "id": 1,
+      "nama": "SBMPTN"
+    },
+    {
+      "id": 2,
+      "nama": "Prestasi"
+    },
+    {
+      "id": 3,
+      "nama": "Seleksi Mandiri PTN"
+    },
+    {
+      "id": 4,
+      "nama": "Seleksi Mandiri PTS"
+    },
+    {
+      "id": 5,
+      "nama": "Ujian Masuk Bersama PTN (UMB-PT)"
+    },
+    {
+      "id": 6,
+      "nama": "Program Internasional"
+    },
+    {
+      "id": 7,
+      "nama": "Program Ekstensi"
+    },
+    {
+      "id": 8,
+      "nama": "Program Kerjasama Perusahaan/Institusi/Pemerintah"
+    },
+    {
+      "id": 9,
+      "nama": "Seleksi Nasional Berdasarkan Tes (SNBT)"
+    },
+    {
+      "id": 10,
+      "nama": "Jalur (S3) Mandiri"
+    },
+    {
+      "id": 11,
+      "nama": "Jalur (S3) Mahasiswa Asing"
+    },
+    {
+      "id": 12,
+      "nama": "Program Magister (S2)"
+    },
+    {
+      "id": 13,
+      "nama": "Program Doktor (S3)"
+    },
+    {
+      "id": 14,
+      "nama": "Seleksi Mandiri"
+    },
+    {
+      "id": 15,
+      "nama": "RPL Transfer SKS"
+    },
+    {
+      "id": 16,
+      "nama": "Disabilitas"
+    },
+    {
+      "id": 17,
+      "nama": "Mahasiswa Asing"
+    },
+    {
+      "id": 18,
+      "nama": "Beasiswa KIP"
+    },
+    {
+      "id": 19,
+      "nama": "Beasiswa Hafidz"
+    },
+    {
+      "id": 20,
+      "nama": "Beasiswa Pemerintah Kota"
+    },
+    {
+      "id": 21,
+      "nama": "RPL Perolehan SKS"
+    },
+    {
+      "id": 22,
+      "nama": "PPG (Guru Tertentu)"
+    },
+    {
+      "id": 23,
+      "nama": "PPG (Calon Guru)"
+    },
+    {
+      "id": 24,
+      "nama": "PPG (Guru Tertentu-Non PPG)"
+    },
+    {
+      "id": 25,
+      "nama": "Pascasarjana (S2)"
+    },
+    {
+      "id": 26,
+      "nama": "Pascasarjana (S3)"
+    },
+    {
+      "id": 27,
+      "nama": "RPL Perolehan SKS (S2)"
+    },
+    {
+      "id": 28,
+      "nama": "Jalur Afirmasi 1"
+    },
+    {
+      "id": 29,
+      "nama": "Jalur Afirmasi 2"
+    },
+    {
+      "id": 30,
+      "nama": "Mahasiswa Pindahan"
+    }
+  ]
+}

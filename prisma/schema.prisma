@@ -1,0 +1,507 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../src/generated/prisma"
+  output   = "../node_modules/.prisma/client"
+  moduleFormat = "esm"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/*
+================ Authentication & Authorization ===================
+*/
+model User {
+  id         String      @id @default(uuid())
+  email       String      @unique
+  password    String
+  nama        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi ke UserRoles
+  roles UserRoles[]
+}
+
+model UserRoles {
+  id         Int      @id @default(autoincrement())
+  userId     String
+  role       Role
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi ke User
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([userId, role])
+}
+
+/*
+================ Unit Kerja & Struktur Organisasi ===================
+*/
+
+model UnitKerja {
+  id          Int      @id @default(autoincrement())
+  kode        String   @unique
+  nama        String
+  singkatan   String?
+  level       LevelUnitKerja
+  parentId    Int?     // Self-referencing untuk hierarki
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Self-referencing relationship untuk hierarki
+  parent   UnitKerja?  @relation("UnitKerjaHierarchy", fields: [parentId], references: [id])
+  children UnitKerja[] @relation("UnitKerjaHierarchy")
+
+  // Relasi untuk backward compatibility dan kemudahan query
+  fakultas     Fakultas[]     @relation("UnitKerjaFakultas")  
+  programStudi ProgramStudi[] @relation("UnitKerjaProgramStudi")
+
+  @@index([parentId])
+  @@index([level])
+  @@map("unit_kerja")
+}
+
+model Fakultas {
+  id            Int      @id @default(autoincrement())
+  kode          String   @unique
+  nama          String
+  singkatan     String?
+  unitKerjaId   Int      // Reference ke UnitKerja level UNIVERSITAS
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relasi ke UnitKerja
+  unitKerja UnitKerja @relation("UnitKerjaFakultas", fields: [unitKerjaId], references: [id])
+
+  // Relasi dengan Program Studi
+  programStudi ProgramStudi[]
+
+  @@index([unitKerjaId])
+  @@map("fakultas")
+}
+
+model ProgramStudi {
+  id               Int      @id @default(autoincrement())
+  kode             String   @unique
+  nama             String
+  singkatan        String?
+  fakultasId       Int
+  unitKerjaId      Int      // Reference ke UnitKerja level FAKULTAS
+  jenjang          JenjangPendidikan
+
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  // Relasi ke Fakultas
+  fakultas Fakultas @relation(fields: [fakultasId], references: [id])
+
+  // Relasi ke UnitKerja
+  unitKerja UnitKerja @relation("UnitKerjaProgramStudi", fields: [unitKerjaId], references: [id])
+
+  // Relasi: ProgramStudi memiliki banyak TarifTagihan
+  tarifTagihan TarifTagihan[]
+
+  @@index([fakultasId])
+  @@index([unitKerjaId])
+  @@map("program_studi")
+}
+
+model JalurPendaftaran {
+  id          Int      @id @default(autoincrement())
+  nama        String   
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi: JalurPendaftaran memiliki banyak TarifTagihan
+  tarifTagihan TarifTagihan[]
+}
+
+enum LevelUnitKerja {
+  UNIVERSITAS
+  FAKULTAS
+  PROGRAM_STUDI
+}
+
+enum JenjangPendidikan {
+  PROFESI
+  DIPLOMA_4
+  SARJANA
+  MAGISTER
+  DOKTOR
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN_KEUANGAN
+  OPERATOR_KEUANGAN
+  KASUBAG_KEUANGAN
+  KEPALA_TU_FAKULTAS //REPORT
+  WAKIL_DEKAN_2 //REPORT
+  WAKIL_REKTOR_2 //REPORT
+  REKTOR //REPORT
+}
+
+enum Gelombang {
+  GELOMBANG_1
+  GELOMBANG_2
+  GELOMBANG_3
+  KIP_A
+  KIP_B
+  KIP_C
+}
+
+enum SistemKuliah {
+  REGULER
+  REGULER_SORE
+  KARYAWAN
+}
+
+/* 
+================ Model pada module refensi ===================
+*/
+model JenisTransaksi {
+  id          Int      @id @default(autoincrement())
+  kode        String   @unique
+  nama        String   
+  formatKodeTransaksi String  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi: JenisTransaksi memiliki banyak Kelompok
+  kelompok Kelompok[]
+}
+
+model JenisUser {
+  id          Int      @id @default(autoincrement())
+  nama        String   
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+   // Relasi: JenisUser memiliki banyak Kelompok
+  kelompok Kelompok[]
+}
+
+model Kelompok {
+  id          Int      @id @default(autoincrement())
+  kode        String   @unique
+  nama        String
+  jenisUserId  Int
+  jenisTransaksiId Int
+
+   // Relasi: Kelompok belongs to JenisUser
+  jenisUser    JenisUser @relation(fields: [jenisUserId], references: [id])
+
+  // Relasi: Kelompok belongs to JenisTransaksi
+  jenisTransaksi JenisTransaksi @relation(fields: [jenisTransaksiId], references: [id])
+
+  // Relasi: Kelompok has many JenisTagihan
+  jenisTagihan JenisTagihan[]
+
+}
+
+model Frekuensi {
+  id          Int      @id @default(autoincrement())
+  kode        String   @unique
+  nama        String   
+  jumlahHari  Int?      
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi: Frekuensi has many JenisTagihan
+  jenisTagihan JenisTagihan[]
+}
+
+model JenisTagihan {
+  id                  String @id @default(uuid())
+  kode                String @unique
+  namaJenisTagihan    String 
+  kelompokId          Int
+  jenisBiayaNeofeeder JenisBiayaNeofeeder? // Enum untuk jenis biaya neofeeder
+  frekuensiId         Int
+  eventKegiatanAkademikId Int? // kegiatan akademik tapi yang event
+  isMahasiswa         Boolean @default(false)
+  isPendaftar         Boolean @default(false)
+  isGenerateKuliah    Boolean @default(false)
+  isSevimaPay         Boolean @default(false)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  //Relasi: JenisTagihan belongs to Kelompok
+  kelompok         Kelompok @relation(fields: [kelompokId], references: [id])
+
+  //Relasi: JenisTagihan belongs to Frekuensi
+  frekuensi        Frekuensi @relation(fields: [frekuensiId], references: [id])
+
+  //Relasi: JenisTagihan belongs to KegiatanAkademik
+  kegiatanAkademik KegiatanAkademik? @relation(fields: [eventKegiatanAkademikId], references: [id])
+
+  //Relase ke AturanPotongan
+  aturanPotongan AturanPotongan[]
+
+  // Relasi ke AturanVoucher
+  aturanVoucher AturanVoucher[]
+
+  // Relasi: JenisTagihan has many TarifTagihan
+  tarifTagihan TarifTagihan[]
+}
+
+model KegiatanAkademik {
+  id          Int      @id @default(autoincrement())
+  kode String     @unique
+  nama String
+  isEvent Boolean @default(false)
+  isSyaratPembayaran Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi: KegiatanAkademik has many JenisTagihan
+  jenisTagihan JenisTagihan[]
+}
+
+model ChannelPembayaranSiakad {
+  id          Int      @id @default(autoincrement())
+  kode        String   @unique
+  namaChannelPembayaran        String   
+  logo String? 
+  isAktif    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi Many-to-Many dengan MetodePembayaranSiakad
+  metodePembayaranChannels MetodePembayaranChannel[]
+}
+
+model MetodePembayaranSiakad {
+  id          Int      @id @default(autoincrement())
+  kode        String   @unique
+  namaMetodePembayaran String
+  jenis JenisMetodePembayaran
+  isDefault Boolean @default(false)
+  isAbleToAddChannel Boolean @default(false)
+  isEditable Boolean @default(false)
+  isDeleteable Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi Many-to-Many dengan ChannelPembayaranSiakad
+  metodePembayaranChannels MetodePembayaranChannel[]
+}
+
+model MetodePembayaranChannel {
+  id                        Int      @id @default(autoincrement())
+  metodePembayaranSiakadId  Int
+  channelPembayaranSiakadId Int
+  isAktif                   Boolean @default(true)
+  createdAt                 DateTime @default(now())
+  updatedAt                 DateTime @updatedAt
+
+  // Relasi ke MetodePembayaranSiakad
+  metodePembayaranSiakad MetodePembayaranSiakad @relation(fields: [metodePembayaranSiakadId], references: [id], onDelete: Cascade)
+  
+  // Relasi ke ChannelPembayaranSiakad
+  channelPembayaranSiakad ChannelPembayaranSiakad @relation(fields: [channelPembayaranSiakadId], references: [id], onDelete: Cascade)
+
+  // Unique constraint untuk mencegah duplikasi
+  @@unique([metodePembayaranSiakadId, channelPembayaranSiakadId])
+}
+
+model KelompokUKT {
+  id          Int      @id @default(autoincrement())
+  kode        String   @unique
+  nama        String   
+  isKipKuliah Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+}
+
+model Periode {
+  id          Int      @id @default(autoincrement())
+  kode        String   @unique
+  namaPeriode        String   
+  tanggalAwalKuliah DateTime?
+  tanggalAkhirKuliah DateTime?
+  tanggalAwalPembayaran DateTime?
+  tanggalAkhirPembayaran DateTime?
+  isAktif    Boolean @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+
+  // Opposite relation fields for Potongan
+  potonganPeriodeAwal Potongan[] @relation("PeriodeAwal")
+  potonganPeriodeAkhir Potongan[] @relation("PeriodeAkhir")
+
+  // Relasi: Periode memiliki banyak Voucer
+  voucerPeriodeAwal Voucer[] @relation("PeriodeAwal")
+  voucerPeriodeAkhir Voucer[] @relation("PeriodeAkhir")
+
+  // Relasi: Periode memiliki banyak TarifTagihan
+  tarifTagihan TarifTagihan[]
+}
+
+model Rekanan {
+  id          Int      @id @default(autoincrement())
+  nama        String   
+  kota        String?
+  telepon     String?
+  email       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi: Rekanan memiliki banyak Potongan
+  potongan Potongan[]
+}
+
+model Potongan {
+  id String @id @default(uuid())
+  nama String
+  periodeAwalId Int?
+  periodeAkhirId Int?
+  nominal Int 
+  anggaran Int
+  rekananId Int?
+  jumlahPenerima Int?
+  realisasi Int?
+  isMemotongTagihan Boolean @default(false)
+  jenisPotongan JenisPotongan
+  tipePotongan TipePotongan?
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+
+  // Relasi ke Periode
+  periodeAwal Periode? @relation("PeriodeAwal", fields: [periodeAwalId], references: [id])
+  periodeAkhir Periode? @relation("PeriodeAkhir", fields: [periodeAkhirId], references: [id]) 
+
+  // Relasi ke Rekanan
+  rekanan Rekanan? @relation(fields: [rekananId], references: [id]) 
+
+  // Relasi ke AturanPotongan
+  aturanPotongan AturanPotongan[]
+}
+
+model AturanPotongan {
+  id String @id @default(uuid())
+  nomorUrut Int
+  potonganId String
+  jenisTagihanId String
+  maksimalNominal Int
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi ke Potongan
+  potongan Potongan @relation(fields: [potonganId], references: [id])
+
+  // Relasi ke JenisTagihan
+  jenisTagihan JenisTagihan @relation(fields: [jenisTagihanId], references: [id])
+
+}
+
+model Voucer {
+  id String @id @default(uuid())
+  kode String @unique
+  nama String
+  nominal Int
+  periodeAwalId Int?
+  periodeAkhirId Int?
+  tanggalExpired DateTime?
+  anggaran Int
+  realisasi Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi ke Periode
+  periodeAwal Periode? @relation("PeriodeAwal", fields: [periodeAwalId], references: [id])
+  periodeAkhir Periode? @relation("PeriodeAkhir", fields: [periodeAkhirId], references: [id]) 
+
+  // Relasi ke AturanVoucher
+  aturanVoucher AturanVoucher[]
+}
+
+
+model AturanVoucher {
+  id String @id @default(uuid())
+  voucerId String
+  jenisTagihanId String
+  maksimalNominal Int
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relasi ke Voucer
+  voucer Voucer @relation(fields: [voucerId], references: [id])
+
+  // Relasi ke JenisTagihan
+  jenisTagihan JenisTagihan @relation(fields: [jenisTagihanId], references: [id])
+}
+
+
+enum JenisMetodePembayaran {
+  OFFLINE
+  ONLINE
+  H2H
+  DEPOSIT
+}
+
+enum JenisBiayaNeofeeder {
+  BIAYA_MASUK
+  BIAYA_SEMESTER  
+  TIDAK_DILAPORKAN
+}
+
+enum JenisPotongan {
+  POTONGAN
+  BEASISWA
+}
+
+enum TipePotongan {
+  POTONGAN_RATA
+  POTONGAN_AWAL
+}
+
+//================= Model pada module ===================
+
+model TarifTagihan {
+  id String @id @default(uuid())
+  periodeId Int
+  gelombang Gelombang
+  sistemKuliah SistemKuliah
+  jalurPendaftaranId Int
+  programStudiId Int
+  jenisTagihanId String
+  jumlahCicilan Int @default(1)
+  SKSSemester Int? // untuk tarif per sks
+  nominal Int
+  frekuensiDenda Int? //ke model frekuensi
+  nominalDenda Int? //nominal denda per frekuensi
+  maksimalDenda Int?
+
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  //relasi ke Periode
+  periode Periode @relation(fields: [periodeId], references: [id])
+
+  //relasi ke jalurPendaftaran
+  jalurPendaftaran JalurPendaftaran @relation(fields: [jalurPendaftaranId], references: [id])
+
+  //relasi ke programStudi
+  programStudi ProgramStudi @relation(fields: [programStudiId], references: [id])
+
+  //relasi ke jenisTagihan
+  jenisTagihan JenisTagihan @relation(fields: [jenisTagihanId], references: [id])
+}

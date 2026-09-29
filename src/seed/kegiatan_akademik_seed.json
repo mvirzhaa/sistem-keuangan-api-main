@@ -1,0 +1,102 @@
+{
+  "kegiatanAkademik": [
+    {
+      "id": 1,
+      "kode": "CUTI",
+      "nama": "Mengambil Cuti",
+      "isEvent": true,
+      "isSyaratPembayaran": true
+    },
+    {
+      "id": 2,
+      "kode": "DAU",
+      "nama": "Daftar Ulang",
+      "isEvent": false,
+      "isSyaratPembayaran": true
+    },
+    {
+      "id": 3,
+      "kode": "FNL",
+      "nama": "Finalisasi Pendaftar",
+      "isEvent": true,
+      "isSyaratPembayaran": false
+    },
+    {
+      "id": 4,
+      "kode": "KHS",
+      "nama": "Melihat KHS",
+      "isEvent": false,
+      "isSyaratPembayaran": true
+    },
+    {
+      "id": 5,
+      "kode": "KRS",
+      "nama": "Pengambilan KRS reguler (Gasal/Genap)",
+      "isEvent": true,
+      "isSyaratPembayaran": true
+    },
+    {
+      "id": 6,
+      "kode": "KRSSP",
+      "nama": "Pengambilan KRS Semester Pendek",
+      "isEvent": true,
+      "isSyaratPembayaran": true
+    },
+    {
+      "id": 7,
+      "kode": "MHS",
+      "nama": "Generate Mahasiswa",
+      "isEvent": false,
+      "isSyaratPembayaran": true
+    },
+    {
+      "id": 8,
+      "kode": "PRESENSI",
+      "nama": "Presensi mahasiswa",
+      "isEvent": false,
+      "isSyaratPembayaran": true
+    },
+    {
+      "id": 9,
+      "kode": "PROPOSAL",
+      "nama": "Mengambil Proposal",
+      "isEvent": true,
+      "isSyaratPembayaran": true
+    },
+    {
+      "id": 10,
+      "kode": "SELEKSI",
+      "nama": "Seleksi Pendaftaran",
+      "isEvent": true,
+      "isSyaratPembayaran": false
+    },
+    {
+      "id": 11,
+      "kode": "SKRIPSI",
+      "nama": "Mengambil Skripsi",
+      "isEvent": true,
+      "isSyaratPembayaran": true
+    },
+    {
+      "id": 12,
+      "kode": "UAS",
+      "nama": "Mengikuti UAS",
+      "isEvent": false,
+      "isSyaratPembayaran": true
+    },
+    {
+      "id": 13,
+      "kode": "UTS",
+      "nama": "Mengikuti UTS",
+      "isEvent": false,
+      "isSyaratPembayaran": true
+    },
+    {
+      "id": 14,
+      "kode": "WSD",
+      "nama": "Mengikuti Wisuda",
+      "isEvent": true,
+      "isSyaratPembayaran": false
+    }
+  ]
+}

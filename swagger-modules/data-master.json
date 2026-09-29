@@ -1,0 +1,1460 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Data Master - Sistem Keuangan UIKA",
+    "version": "1.0.0",
+    "description": "API endpoints untuk manajemen data master dan user",
+    "contact": {
+      "name": "API Support",
+      "email": "support@uika.ac.id"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Development server"
+    },
+    {
+      "url": "https://api-keuangan.uika.ac.id",
+      "description": "Production server"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "responses": {
+      "UnauthorizedError": {
+        "description": "Unauthorized",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Unauthorized access - Token required"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ServerError": {
+        "description": "Server Error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Terjadi kesalahan pada server"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Data Master",
+      "description": "API endpoints untuk manajemen data master dan user"
+    }
+  ],
+  "paths": {
+    "/api/data-master/users/create-account": {
+      "post": {
+        "summary": "Membuat akun pengguna baru (Admin Only)",
+        "description": "Endpoint untuk membuat akun pengguna baru dalam sistem. Hanya bisa dilakukan oleh admin.",
+        "tags": [
+          "Auth - User Management"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "nama",
+                  "email",
+                  "password",
+                  "roles"
+                ],
+                "properties": {
+                  "nama": {
+                    "type": "string",
+                    "example": "John Doe",
+                    "description": "Nama lengkap pengguna (2-100 karakter)"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "john.doe@uika.ac.id",
+                    "description": "Email unik pengguna"
+                  },
+                  "password": {
+                    "type": "string",
+                    "format": "password",
+                    "example": "SecurePass123!",
+                    "description": "Password dengan minimal 8 karakter (harus mengandung huruf besar, kecil, angka, dan simbol)"
+                  },
+                  "roles": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "SUPER_ADMIN",
+                        "ADMIN_KEUANGAN",
+                        "OPERATOR_KEUANGAN",
+                        "KASUBAG_KEUANGAN",
+                        "KEPALA_TU_FAKULTAS",
+                        "WAKIL_DEKAN_2",
+                        "WAKIL_REKTOR_2",
+                        "REKTOR"
+                      ]
+                    },
+                    "example": [
+                      "ADMIN_KEUANGAN",
+                      "OPERATOR_KEUANGAN"
+                    ],
+                    "description": "Array role yang akan diberikan kepada pengguna"
+                  }
+                }
+              },
+              "examples": {
+                "admin-keuangan": {
+                  "summary": "Admin Keuangan",
+                  "value": {
+                    "nama": "Ahmad Subagja",
+                    "email": "ahmad.subagja@uika.ac.id",
+                    "password": "AdminKeuangan123!",
+                    "roles": [
+                      "ADMIN_KEUANGAN"
+                    ]
+                  }
+                },
+                "operator-keuangan": {
+                  "summary": "Operator Keuangan",
+                  "value": {
+                    "nama": "Siti Nurhaliza",
+                    "email": "siti.nurhaliza@uika.ac.id",
+                    "password": "OperatorKeuangan123!",
+                    "roles": [
+                      "OPERATOR_KEUANGAN"
+                    ]
+                  }
+                },
+                "multiple-roles": {
+                  "summary": "Pengguna dengan Multiple Roles",
+                  "value": {
+                    "nama": "Dr. Bambang Susilo",
+                    "email": "bambang.susilo@uika.ac.id",
+                    "password": "MultiRole123!",
+                    "roles": [
+                      "KASUBAG_KEUANGAN",
+                      "ADMIN_KEUANGAN"
+                    ]
+                  }
+                },
+                "super-admin": {
+                  "summary": "Super Admin",
+                  "value": {
+                    "nama": "Super Administrator",
+                    "email": "superadmin@uika.ac.id",
+                    "password": "SuperAdmin123!",
+                    "roles": [
+                      "SUPER_ADMIN"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Akun berhasil dibuat",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Akun berhasil dibuat",
+                  "data": {
+                    "id": "550e8400-e29b-41d4-a716-446655440000",
+                    "nama": "Ahmad Subagja",
+                    "email": "ahmad.subagja@uika.ac.id",
+                    "roles": [
+                      "ADMIN_KEUANGAN"
+                    ],
+                    "createdAt": "2024-01-01T00:00:00.000Z",
+                    "updatedAt": "2024-01-01T00:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validasi gagal",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "validation-error": {
+                    "summary": "Error validasi input",
+                    "value": {
+                      "message": "Validasi gagal",
+                      "errors": [
+                        {
+                          "field": "email",
+                          "message": "Format email tidak valid",
+                          "value": "invalid-email"
+                        },
+                        {
+                          "field": "password",
+                          "message": "Password harus mengandung minimal: 1 huruf kecil, 1 huruf besar, 1 angka, dan 1 karakter spesial",
+                          "value": "weakpass"
+                        }
+                      ]
+                    }
+                  },
+                  "invalid-roles": {
+                    "summary": "Role tidak valid",
+                    "value": {
+                      "message": "Validasi gagal",
+                      "errors": [
+                        {
+                          "field": "roles",
+                          "message": "Role tidak valid: INVALID_ROLE",
+                          "value": [
+                            "INVALID_ROLE"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Unauthorized access - Token required"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Hanya admin yang bisa membuat akun",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Access denied - Admin role required"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict - Email sudah terdaftar",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Email sudah terdaftar dalam sistem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Terjadi kesalahan saat membuat akun"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-master/users": {
+      "get": {
+        "summary": "Mendapatkan daftar semua pengguna (Admin Only)",
+        "description": "Endpoint untuk mengambil daftar semua pengguna dalam sistem. Hanya bisa diakses oleh admin.",
+        "tags": [
+          "Auth - User Management"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data pengguna berhasil diambil",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Data pengguna berhasil diambil",
+                  "data": [
+                    {
+                      "id": "550e8400-e29b-41d4-a716-446655440000",
+                      "nama": "Ahmad Subagja",
+                      "email": "ahmad.subagja@uika.ac.id",
+                      "roles": [
+                        "ADMIN_KEUANGAN"
+                      ],
+                      "createdAt": "2024-01-01T00:00:00.000Z",
+                      "updatedAt": "2024-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "id": "550e8400-e29b-41d4-a716-446655440001",
+                      "nama": "Siti Nurhaliza",
+                      "email": "siti.nurhaliza@uika.ac.id",
+                      "roles": [
+                        "OPERATOR_KEUANGAN"
+                      ],
+                      "createdAt": "2024-01-02T00:00:00.000Z",
+                      "updatedAt": "2024-01-02T00:00:00.000Z"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Unauthorized access - Token required"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Hanya admin yang bisa mengakses",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Access denied - Admin role required"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Terjadi kesalahan saat mengambil data pengguna"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-master/users/{id}": {
+      "get": {
+        "summary": "Mendapatkan detail pengguna berdasarkan ID (Admin Only)",
+        "description": "Endpoint untuk mengambil detail pengguna berdasarkan ID. Hanya bisa diakses oleh admin.",
+        "tags": [
+          "Auth - User Management"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "UUID pengguna",
+            "example": "550e8400-e29b-41d4-a716-446655440000"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data pengguna berhasil diambil",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Data pengguna berhasil diambil",
+                  "data": {
+                    "id": "550e8400-e29b-41d4-a716-446655440000",
+                    "nama": "Ahmad Subagja",
+                    "email": "ahmad.subagja@uika.ac.id",
+                    "roles": [
+                      "ADMIN_KEUANGAN"
+                    ],
+                    "createdAt": "2024-01-01T00:00:00.000Z",
+                    "updatedAt": "2024-01-01T00:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "UUID tidak valid",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Validasi gagal",
+                  "errors": [
+                    {
+                      "field": "id",
+                      "message": "ID harus berupa UUID yang valid",
+                      "value": "invalid-uuid"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Unauthorized access - Token required"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Hanya admin yang bisa mengakses",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Access denied - Admin role required"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Pengguna tidak ditemukan",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Pengguna tidak ditemukan"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Terjadi kesalahan saat mengambil data pengguna"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Menghapus pengguna berdasarkan ID (Admin Only)",
+        "description": "Endpoint untuk menghapus pengguna berdasarkan ID. Hanya bisa dilakukan oleh admin.",
+        "tags": [
+          "Auth - User Management"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "UUID pengguna yang akan dihapus",
+            "example": "550e8400-e29b-41d4-a716-446655440000"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Pengguna berhasil dihapus",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Pengguna berhasil dihapus",
+                  "deletedRecord": {
+                    "id": "550e8400-e29b-41d4-a716-446655440000",
+                    "nama": "Ahmad Subagja",
+                    "email": "ahmad.subagja@uika.ac.id",
+                    "roles": [
+                      "ADMIN_KEUANGAN"
+                    ],
+                    "createdAt": "2024-01-01T00:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "UUID tidak valid",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Validasi gagal",
+                  "errors": [
+                    {
+                      "field": "id",
+                      "message": "ID harus berupa UUID yang valid",
+                      "value": "invalid-uuid"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Unauthorized access - Token required"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden - Hanya admin yang bisa menghapus",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Access denied - Admin role required"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Pengguna tidak ditemukan",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Pengguna tidak ditemukan"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Terjadi kesalahan saat menghapus pengguna"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/data-master/unit-kerja/hierarki": {
+      "get": {
+        "summary": "Mendapatkan hierarki unit kerja lengkap dengan children",
+        "description": "Endpoint untuk mengambil struktur hierarki unit kerja dari universitas hingga program studi dengan nested children",
+        "tags": [
+          "Data Master - Unit Kerja"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Hierarki unit kerja berhasil diambil",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Hierarki unit kerja berhasil diambil",
+                  "data": [
+                    {
+                      "id": 1,
+                      "kode": "UIKA",
+                      "nama": "Universitas Ibn Khaldun Bogor",
+                      "singkatan": "UIKA",
+                      "level": "UNIVERSITAS",
+                      "parentId": null,
+                      "children": [
+                        {
+                          "id": 2,
+                          "kode": "FKIP",
+                          "nama": "Fakultas Keguruan dan Ilmu Pendidikan",
+                          "level": "FAKULTAS",
+                          "children": [
+                            {
+                              "id": 9,
+                              "kode": "PVDF",
+                              "nama": "Pendidikan Vokasional Desain Fashion",
+                              "level": "PROGRAM_STUDI"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/data-master/unit-kerja": {
+      "get": {
+        "summary": "Mendapatkan semua unit kerja (flat list)",
+        "description": "Endpoint untuk mengambil semua unit kerja dalam bentuk daftar datar dengan informasi parent dan children",
+        "tags": [
+          "Data Master - Unit Kerja"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data unit kerja berhasil diambil"
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      },
+      "post": {
+        "summary": "Membuat unit kerja baru (Super Admin Only)",
+        "description": "Endpoint untuk membuat unit kerja baru. Hanya bisa dilakukan oleh super admin.",
+        "tags": [
+          "Data Master - Unit Kerja"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "examples": {
+                "universitas": {
+                  "summary": "Membuat Universitas",
+                  "value": {
+                    "kode": "UIKA",
+                    "nama": "Universitas Ibn Khaldun Bogor",
+                    "singkatan": "UIKA",
+                    "level": "UNIVERSITAS"
+                  }
+                },
+                "fakultas": {
+                  "summary": "Membuat Fakultas",
+                  "value": {
+                    "kode": "FEB",
+                    "nama": "Fakultas Ekonomi dan Bisnis",
+                    "singkatan": "FEB",
+                    "level": "FAKULTAS",
+                    "parentId": 1
+                  }
+                },
+                "program-studi": {
+                  "summary": "Membuat Program Studi",
+                  "value": {
+                    "kode": "AKT",
+                    "nama": "Akuntansi",
+                    "singkatan": "AKT",
+                    "level": "PROGRAM_STUDI",
+                    "parentId": 4
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Unit kerja berhasil dibuat"
+          },
+          "400": {
+            "description": "Validasi gagal"
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "403": {
+            "description": "Forbidden - Super Admin only"
+          },
+          "409": {
+            "description": "Conflict - Kode sudah ada atau hierarki tidak valid"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/data-master/unit-kerja/level": {
+      "get": {
+        "summary": "Mendapatkan unit kerja berdasarkan level",
+        "description": "Endpoint untuk mengambil unit kerja berdasarkan level tertentu (UNIVERSITAS, FAKULTAS, PROGRAM_STUDI)",
+        "tags": [
+          "Data Master - Unit Kerja"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "level",
+            "required": true,
+            "description": "Level unit kerja",
+            "example": "FAKULTAS",
+            "enum": [
+              "UNIVERSITAS",
+              "FAKULTAS",
+              "PROGRAM_STUDI"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data unit kerja berhasil diambil"
+          },
+          "400": {
+            "description": "Level tidak valid"
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/data-master/unit-kerja/{id}": {
+      "get": {
+        "summary": "Mendapatkan detail unit kerja berdasarkan ID",
+        "description": "Endpoint untuk mengambil detail unit kerja beserta path hierarki dan children-nya",
+        "tags": [
+          "Data Master - Unit Kerja"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID unit kerja",
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data unit kerja berhasil diambil"
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "404": {
+            "description": "Unit kerja tidak ditemukan"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Memperbarui unit kerja (Super Admin Only)",
+        "description": "Endpoint untuk memperbarui data unit kerja. Hanya bisa dilakukan oleh super admin.",
+        "tags": [
+          "Data Master - Unit Kerja"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID unit kerja",
+            "example": 1
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "example": {
+                "nama": "Universitas Ibn Khaldun Bogor (Updated)",
+                "singkatan": "UIKA-UPD"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Unit kerja berhasil diperbarui"
+          },
+          "400": {
+            "description": "Validasi gagal"
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "403": {
+            "description": "Forbidden - Super Admin only"
+          },
+          "404": {
+            "description": "Unit kerja tidak ditemukan"
+          },
+          "409": {
+            "description": "Conflict - Kode sudah ada atau tidak bisa membuat circular reference"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Menghapus unit kerja (Super Admin Only)",
+        "description": "Endpoint untuk menghapus unit kerja. Hanya bisa dilakukan jika tidak memiliki children atau relasi. Hanya bisa dilakukan oleh super admin.",
+        "tags": [
+          "Data Master - Unit Kerja"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID unit kerja",
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Unit kerja berhasil dihapus"
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "403": {
+            "description": "Forbidden - Super Admin only"
+          },
+          "404": {
+            "description": "Unit kerja tidak ditemukan"
+          },
+          "409": {
+            "description": "Conflict - Unit kerja memiliki children atau relasi yang tidak bisa dihapus"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/data-master/unit-kerja/{id}/path": {
+      "get": {
+        "summary": "Mendapatkan path hierarki unit kerja (breadcrumb)",
+        "description": "Endpoint untuk mengambil jalur hierarki dari root sampai unit kerja tertentu",
+        "tags": [
+          "Data Master - Unit Kerja"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID unit kerja",
+            "example": 9
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Path unit kerja berhasil diambil",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Path unit kerja berhasil diambil",
+                  "data": [
+                    {
+                      "id": 1,
+                      "kode": "UIKA",
+                      "nama": "Universitas Ibn Khaldun Bogor",
+                      "level": "UNIVERSITAS"
+                    },
+                    {
+                      "id": 2,
+                      "kode": "FKIP",
+                      "nama": "Fakultas Keguruan dan Ilmu Pendidikan",
+                      "level": "FAKULTAS"
+                    },
+                    {
+                      "id": 9,
+                      "kode": "PVDF",
+                      "nama": "Pendidikan Vokasional Desain Fashion",
+                      "level": "PROGRAM_STUDI"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "404": {
+            "description": "Unit kerja tidak ditemukan"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/data-master/jalur-pendaftaran": {
+      "get": {
+        "summary": "Mendapatkan semua jalur pendaftaran",
+        "description": "Endpoint untuk mengambil daftar semua jalur pendaftaran. Dapat diakses oleh semua user yang terautentikasi.",
+        "tags": [
+          "Data Master - Jalur Pendaftaran"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data jalur pendaftaran berhasil diambil",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Data jalur pendaftaran berhasil diambil",
+                  "data": [
+                    {
+                      "id": 1,
+                      "nama": "SBMPTN",
+                      "createdAt": "2024-01-01T00:00:00.000Z",
+                      "updatedAt": "2024-01-01T00:00:00.000Z"
+                    },
+                    {
+                      "id": 2,
+                      "nama": "Prestasi",
+                      "createdAt": "2024-01-02T00:00:00.000Z",
+                      "updatedAt": "2024-01-02T00:00:00.000Z"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      },
+      "post": {
+        "summary": "Membuat jalur pendaftaran baru (Super Admin Only)",
+        "description": "Endpoint untuk membuat jalur pendaftaran baru. Hanya bisa dilakukan oleh super admin.",
+        "tags": [
+          "Data Master - Jalur Pendaftaran"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "nama"
+                ],
+                "properties": {
+                  "nama": {
+                    "type": "string",
+                    "example": "Jalur Mandiri",
+                    "description": "Nama jalur pendaftaran (3-100 karakter)"
+                  }
+                }
+              },
+              "examples": {
+                "sbmptn": {
+                  "summary": "SBMPTN",
+                  "value": {
+                    "nama": "SBMPTN"
+                  }
+                },
+                "prestasi": {
+                  "summary": "Jalur Prestasi",
+                  "value": {
+                    "nama": "Prestasi"
+                  }
+                },
+                "mandiri": {
+                  "summary": "Jalur Mandiri",
+                  "value": {
+                    "nama": "Seleksi Mandiri PTN"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Jalur pendaftaran berhasil dibuat",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Jalur pendaftaran berhasil dibuat",
+                  "data": {
+                    "id": 31,
+                    "nama": "Jalur Mandiri",
+                    "createdAt": "2024-01-01T00:00:00.000Z",
+                    "updatedAt": "2024-01-01T00:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validasi gagal",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Validasi gagal",
+                  "errors": [
+                    {
+                      "field": "nama",
+                      "message": "Nama harus antara 3-100 karakter",
+                      "value": "AB"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "403": {
+            "description": "Forbidden - Super Admin only"
+          },
+          "409": {
+            "description": "Conflict - Nama sudah ada",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Nama jalur pendaftaran sudah ada"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/data-master/jalur-pendaftaran/{id}": {
+      "get": {
+        "summary": "Mendapatkan detail jalur pendaftaran berdasarkan ID",
+        "description": "Endpoint untuk mengambil detail jalur pendaftaran berdasarkan ID. Dapat diakses oleh semua user yang terautentikasi.",
+        "tags": [
+          "Data Master - Jalur Pendaftaran"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID jalur pendaftaran",
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data jalur pendaftaran berhasil diambil",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Data jalur pendaftaran berhasil diambil",
+                  "data": {
+                    "id": 1,
+                    "nama": "SBMPTN",
+                    "createdAt": "2024-01-01T00:00:00.000Z",
+                    "updatedAt": "2024-01-01T00:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "404": {
+            "description": "Jalur pendaftaran tidak ditemukan"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Memperbarui jalur pendaftaran (Super Admin Only)",
+        "description": "Endpoint untuk memperbarui data jalur pendaftaran. Hanya bisa dilakukan oleh super admin.",
+        "tags": [
+          "Data Master - Jalur Pendaftaran"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID jalur pendaftaran",
+            "example": 1
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nama": {
+                    "type": "string",
+                    "example": "SBMPTN Updated",
+                    "description": "Nama jalur pendaftaran (3-100 karakter)"
+                  }
+                }
+              },
+              "example": {
+                "nama": "SBMPTN Updated"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Jalur pendaftaran berhasil diperbarui",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Jalur pendaftaran berhasil diperbarui",
+                  "data": {
+                    "id": 1,
+                    "nama": "SBMPTN Updated",
+                    "createdAt": "2024-01-01T00:00:00.000Z",
+                    "updatedAt": "2024-01-01T12:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validasi gagal"
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "403": {
+            "description": "Forbidden - Super Admin only"
+          },
+          "404": {
+            "description": "Jalur pendaftaran tidak ditemukan"
+          },
+          "409": {
+            "description": "Conflict - Nama sudah ada"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Menghapus jalur pendaftaran (Super Admin Only)",
+        "description": "Endpoint untuk menghapus jalur pendaftaran. Hanya bisa dilakukan oleh super admin.",
+        "tags": [
+          "Data Master - Jalur Pendaftaran"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID jalur pendaftaran",
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Jalur pendaftaran berhasil dihapus",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "Jalur pendaftaran berhasil dihapus",
+                  "deletedRecord": {
+                    "id": 1,
+                    "nama": "SBMPTN",
+                    "createdAt": "2024-01-01T00:00:00.000Z",
+                    "updatedAt": "2024-01-01T00:00:00.000Z"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "403": {
+            "description": "Forbidden - Super Admin only"
+          },
+          "404": {
+            "description": "Jalur pendaftaran tidak ditemukan"
+          },
+          "409": {
+            "description": "Conflict - Jalur pendaftaran masih digunakan pada data lain"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/data-master/jalur-pendaftaran/{id}/validate-delete": {
+      "get": {
+        "summary": "Validasi apakah jalur pendaftaran dapat dihapus",
+        "description": "Endpoint untuk memvalidasi apakah jalur pendaftaran dapat dihapus tanpa melanggar constraint",
+        "tags": [
+          "Data Master - Jalur Pendaftaran"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID jalur pendaftaran",
+            "example": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Validasi berhasil",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "can-delete": {
+                    "summary": "Dapat dihapus",
+                    "value": {
+                      "canDelete": true,
+                      "message": "Jalur pendaftaran dapat dihapus"
+                    }
+                  },
+                  "cannot-delete": {
+                    "summary": "Tidak dapat dihapus",
+                    "value": {
+                      "canDelete": false,
+                      "message": "Data Jalur Pendaftaran tidak dapat dihapus karena masih digunakan pada data lain"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "404": {
+            "description": "Jalur pendaftaran tidak ditemukan"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    },
+    "/api/data-master/jalur-pendaftaran/bulk-delete": {
+      "delete": {
+        "summary": "Menghapus multiple jalur pendaftaran sekaligus (Super Admin Only)",
+        "description": "Endpoint untuk menghapus beberapa jalur pendaftaran sekaligus. Hanya bisa dilakukan oleh super admin.",
+        "tags": [
+          "Data Master - Jalur Pendaftaran"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "ids"
+                ],
+                "properties": {
+                  "ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    },
+                    "example": [
+                      10,
+                      11,
+                      12
+                    ],
+                    "description": "Array ID jalur pendaftaran yang akan dihapus (maksimal 100)"
+                  }
+                }
+              },
+              "example": {
+                "ids": [
+                  10,
+                  11,
+                  12
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Jalur pendaftaran berhasil dihapus",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "3 jalur pendaftaran berhasil dihapus",
+                  "deletedCount": 3,
+                  "deletedIds": [
+                    10,
+                    11,
+                    12
+                  ],
+                  "deletedRecords": [
+                    {
+                      "id": 10,
+                      "nama": "Test Jalur 1",
+                      "createdAt": "2024-01-01T00:00:00.000Z",
+                      "updatedAt": "2024-01-01T00:00:00.000Z"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validasi gagal atau request tidak valid"
+          },
+          "401": {
+            "description": "Unauthorized - Token required"
+          },
+          "403": {
+            "description": "Forbidden - Super Admin only"
+          },
+          "404": {
+            "description": "Salah satu jalur pendaftaran tidak ditemukan"
+          },
+          "409": {
+            "description": "Conflict - Jalur pendaftaran masih digunakan pada data lain"
+          },
+          "500": {
+            "description": "Server Error"
+          }
+        }
+      }
+    }
+  }
+}

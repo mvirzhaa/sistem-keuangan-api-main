@@ -1,0 +1,59 @@
+{
+  "kelompokUKT": [
+    {
+      "kode": "01",
+      "nama": "KIP Kuliah",
+      "isKipKuliah": true
+    },
+    {
+      "kode": "02",
+      "nama": "Kelompok 2",
+      "isKipKuliah": false
+    },
+    {
+      "kode": "03",
+      "nama": "Kelompok 3",
+      "isKipKuliah": false
+    },
+    {
+      "kode": "04",
+      "nama": "Kelompok 4",
+      "isKipKuliah": false
+    },
+    {
+      "kode": "05",
+      "nama": "Kelompok 5",
+      "isKipKuliah": true
+    },
+    {
+      "kode": "AFUK1",
+      "nama": "Afirmasi UIKA Bogor Skema 1",
+      "isKipKuliah": false
+    },
+    {
+      "kode": "AFUK2",
+      "nama": "Afirmasi UIKA Bogor Skema 2",
+      "isKipKuliah": false
+    },
+    {
+      "kode": "Alumn",
+      "nama": "Alumni",
+      "isKipKuliah": false
+    },
+    {
+      "kode": "KIP",
+      "nama": "KIP Kuliah 2024",
+      "isKipKuliah": true
+    },
+    {
+      "kode": "KRJ",
+      "nama": "Kerja Sama",
+      "isKipKuliah": false
+    },
+    {
+      "kode": "Reg",
+      "nama": "Reguler",
+      "isKipKuliah": false
+    }
+  ]
+}

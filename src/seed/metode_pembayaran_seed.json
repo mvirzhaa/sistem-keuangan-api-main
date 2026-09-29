@@ -1,0 +1,58 @@
+{
+  "metodePembayaran": [
+    {
+      "kode": "01",
+      "namaMetodePembayaran": "Bank Syariah Indonesia",
+      "jenis": "OFFLINE",
+      "isDefault": false,
+      "isAbleToAddChannel": true,
+      "isEditable": true,
+      "isDeleteable": true
+    },
+    {
+      "kode": "02",
+      "namaMetodePembayaran": "Kasir BASK UIKA",
+      "jenis": "OFFLINE",
+      "isDefault": false,
+      "isAbleToAddChannel": true,
+      "isEditable": true,
+      "isDeleteable": true
+    },
+    {
+      "kode": "03",
+      "namaMetodePembayaran": "Bank Amanah Ummah",
+      "jenis": "OFFLINE",
+      "isDefault": false,
+      "isAbleToAddChannel": true,
+      "isEditable": true,
+      "isDeleteable": true
+    },
+    {
+      "kode": "04",
+      "namaMetodePembayaran": "Host to Host",
+      "jenis": "H2H",
+      "isDefault": false,
+      "isAbleToAddChannel": false,
+      "isEditable": false,
+      "isDeleteable": false
+    },
+    {
+      "kode": "06",
+      "namaMetodePembayaran": "Deposit",
+      "jenis": "DEPOSIT",
+      "isDefault": false,
+      "isAbleToAddChannel": false,
+      "isEditable": false,
+      "isDeleteable": false
+    },
+    {
+      "kode": "07",
+      "namaMetodePembayaran": "SIMPONI",
+      "jenis": "ONLINE",
+      "isDefault": false,
+      "isAbleToAddChannel": false,
+      "isEditable": false,
+      "isDeleteable": false
+    }
+  ]
+}

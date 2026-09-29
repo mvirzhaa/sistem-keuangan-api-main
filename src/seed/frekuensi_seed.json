@@ -1,0 +1,70 @@
+{
+  "frekuensi": [
+    {
+      "id": 1,
+      "kode": "KK",
+      "nama": "Tiap Transaksi",
+      "jumlahHari": null
+    },
+    {
+      "id": 2,
+      "kode": "KL",
+      "nama": "Kelulusan",
+      "jumlahHari": null
+    },
+    {
+      "id": 3,
+      "kode": "KS",
+      "nama": "Kuliah SKS",
+      "jumlahHari": null
+    },
+    {
+      "id": 4,
+      "kode": "MC",
+      "nama": "Mahasiswa Cuti",
+      "jumlahHari": null
+    },
+    {
+      "id": 5,
+      "kode": "PM",
+      "nama": "Pendaftaran",
+      "jumlahHari": null
+    },
+    {
+      "id": 6,
+      "kode": "SL",
+      "nama": "Seleksi Pendaftaran",
+      "jumlahHari": null
+    },
+    {
+      "id": 7,
+      "kode": "WB",
+      "nama": "Bulanan",
+      "jumlahHari": 30
+    },
+    {
+      "id": 8,
+      "kode": "WH",
+      "nama": "Harian",
+      "jumlahHari": 1
+    },
+    {
+      "id": 9,
+      "kode": "WM",
+      "nama": "Mingguan",
+      "jumlahHari": 7
+    },
+    {
+      "id": 10,
+      "kode": "WS",
+      "nama": "Semester",
+      "jumlahHari": 180
+    },
+    {
+      "id": 11,
+      "kode": "WT",
+      "nama": "Tahunan",
+      "jumlahHari": 365
+    }
+  ]
+}

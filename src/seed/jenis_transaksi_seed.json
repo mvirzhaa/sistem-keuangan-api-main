@@ -1,0 +1,22 @@
+{
+  "jenisTransaksi": [
+    {
+      "id": 1,
+      "kode": "DEP",
+      "nama": "Deposit",
+      "formatKodeTransaksi": "DEP/{{periode}}/{{urutan}}"
+    },
+    {
+      "id": 2,
+      "kode": "PAY",
+      "nama": "Pembayaran",
+      "formatKodeTransaksi": "PAY/{{periode}}/{{urutan}}"
+    },
+    {
+      "id": 3,
+      "kode": "INV",
+      "nama": "Tagihan",
+      "formatKodeTransaksi": "INV/{{periode}}/{{urutan}}"
+    }
+  ]
+}

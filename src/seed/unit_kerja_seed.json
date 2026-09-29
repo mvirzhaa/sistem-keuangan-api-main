@@ -1,0 +1,750 @@
+{
+  "unitKerja": [
+    {
+      "id": 1,
+      "kode": "UIKA",
+      "nama": "Universitas Ibn Khaldun Bogor",
+      "singkatan": "UIKA",
+      "level": "UNIVERSITAS",
+      "parentId": null
+    },
+    {
+      "id": 2,
+      "kode": "FKIP",
+      "nama": "Fakultas Keguruan dan Ilmu Pendidikan",
+      "singkatan": "FKIP",
+      "level": "FAKULTAS",
+      "parentId": 1
+    },
+    {
+      "id": 3,
+      "kode": "FH",
+      "nama": "Fakultas Hukum",
+      "singkatan": "FH",
+      "level": "FAKULTAS",
+      "parentId": 1
+    },
+    {
+      "id": 4,
+      "kode": "FEB",
+      "nama": "Fakultas Ekonomi dan Bisnis",
+      "singkatan": "FEB",
+      "level": "FAKULTAS",
+      "parentId": 1
+    },
+    {
+      "id": 5,
+      "kode": "FAI",
+      "nama": "Fakultas Agama Islam",
+      "singkatan": "FAI",
+      "level": "FAKULTAS",
+      "parentId": 1
+    },
+    {
+      "id": 6,
+      "kode": "FTS",
+      "nama": "Fakultas Teknik dan Sains",
+      "singkatan": "FTS",
+      "level": "FAKULTAS",
+      "parentId": 1
+    },
+    {
+      "id": 7,
+      "kode": "PASCA",
+      "nama": "Sekolah Pascasarjana",
+      "singkatan": "PASCA",
+      "level": "FAKULTAS",
+      "parentId": 1
+    },
+    {
+      "id": 8,
+      "kode": "FIK",
+      "nama": "Fakultas Ilmu Kesehatan",
+      "singkatan": "FIK",
+      "level": "FAKULTAS",
+      "parentId": 1
+    },
+    {
+      "id": 9,
+      "kode": "PVDF",
+      "nama": "Pendidikan Vokasional Desain Fashion",
+      "singkatan": "PVDF",
+      "level": "PROGRAM_STUDI",
+      "parentId": 2
+    },
+    {
+      "id": 10,
+      "kode": "PMT",
+      "nama": "Pendidikan Matematika",
+      "singkatan": "PMT",
+      "level": "PROGRAM_STUDI",
+      "parentId": 2
+    },
+    {
+      "id": 11,
+      "kode": "TP",
+      "nama": "Teknologi Pendidikan",
+      "singkatan": "TP",
+      "level": "PROGRAM_STUDI",
+      "parentId": 2
+    },
+    {
+      "id": 12,
+      "kode": "PM",
+      "nama": "Pendidikan Masyarakat",
+      "singkatan": "PM",
+      "level": "PROGRAM_STUDI",
+      "parentId": 2
+    },
+    {
+      "id": 13,
+      "kode": "PPG",
+      "nama": "Pendidikan Profesi Guru",
+      "singkatan": "PPG",
+      "level": "PROGRAM_STUDI",
+      "parentId": 2
+    },
+    {
+      "id": 14,
+      "kode": "PBI",
+      "nama": "Pendidikan Bahasa Inggris",
+      "singkatan": "PBI",
+      "level": "PROGRAM_STUDI",
+      "parentId": 2
+    },
+    {
+      "id": 15,
+      "kode": "IH",
+      "nama": "Ilmu Hukum",
+      "singkatan": "IH",
+      "level": "PROGRAM_STUDI",
+      "parentId": 3
+    },
+    {
+      "id": 16,
+      "kode": "MJN",
+      "nama": "Manajemen",
+      "singkatan": "MJN",
+      "level": "PROGRAM_STUDI",
+      "parentId": 4
+    },
+    {
+      "id": 17,
+      "kode": "BD",
+      "nama": "Bisnis Digital",
+      "singkatan": "BD",
+      "level": "PROGRAM_STUDI",
+      "parentId": 4
+    },
+    {
+      "id": 18,
+      "kode": "PKD",
+      "nama": "Perbankan dan Keuangan Digital",
+      "singkatan": "PKD",
+      "level": "PROGRAM_STUDI",
+      "parentId": 4
+    },
+    {
+      "id": 19,
+      "kode": "AKT",
+      "nama": "Akuntansi",
+      "singkatan": "AKT",
+      "level": "PROGRAM_STUDI",
+      "parentId": 4
+    },
+    {
+      "id": 20,
+      "kode": "PI",
+      "nama": "Perdagangan Internasional",
+      "singkatan": "PI",
+      "level": "PROGRAM_STUDI",
+      "parentId": 4
+    },
+    {
+      "id": 21,
+      "kode": "ES",
+      "nama": "Ekonomi Syariah",
+      "singkatan": "ES",
+      "level": "PROGRAM_STUDI",
+      "parentId": 5
+    },
+    {
+      "id": 22,
+      "kode": "MHU",
+      "nama": "Manajemen Haji dan Umrah",
+      "singkatan": "MHU",
+      "level": "PROGRAM_STUDI",
+      "parentId": 5
+    },
+    {
+      "id": 23,
+      "kode": "BKI",
+      "nama": "Bimbingan dan Konseling Pendidikan Islam",
+      "singkatan": "BKI",
+      "level": "PROGRAM_STUDI",
+      "parentId": 5
+    },
+    {
+      "id": 24,
+      "kode": "KPI",
+      "nama": "Komunikasi dan Penyiaran Islam",
+      "singkatan": "KPI",
+      "level": "PROGRAM_STUDI",
+      "parentId": 5
+    },
+    {
+      "id": 25,
+      "kode": "AS",
+      "nama": "Ahwal Al Syakshiyah",
+      "singkatan": "AS",
+      "level": "PROGRAM_STUDI",
+      "parentId": 5
+    },
+    {
+      "id": 26,
+      "kode": "IAT",
+      "nama": "Ilmu Al-Qur`an dan Tafsir",
+      "singkatan": "IAT",
+      "level": "PROGRAM_STUDI",
+      "parentId": 5
+    },
+    {
+      "id": 27,
+      "kode": "PAI",
+      "nama": "Pendidikan Agama Islam",
+      "singkatan": "PAI",
+      "level": "PROGRAM_STUDI",
+      "parentId": 5
+    },
+    {
+      "id": 28,
+      "kode": "PGMI",
+      "nama": "Pendidikan Guru Madrasah Ibtidaiyah",
+      "singkatan": "PGMI",
+      "level": "PROGRAM_STUDI",
+      "parentId": 5
+    },
+    {
+      "id": 29,
+      "kode": "TE",
+      "nama": "Teknik Elektro",
+      "singkatan": "TE",
+      "level": "PROGRAM_STUDI",
+      "parentId": 6
+    },
+    {
+      "id": 30,
+      "kode": "TM",
+      "nama": "Teknik Mesin",
+      "singkatan": "TM",
+      "level": "PROGRAM_STUDI",
+      "parentId": 6
+    },
+    {
+      "id": 31,
+      "kode": "TS",
+      "nama": "Teknik Sipil",
+      "singkatan": "TS",
+      "level": "PROGRAM_STUDI",
+      "parentId": 6
+    },
+    {
+      "id": 32,
+      "kode": "IL",
+      "nama": "Ilmu Lingkungan",
+      "singkatan": "IL",
+      "level": "PROGRAM_STUDI",
+      "parentId": 6
+    },
+    {
+      "id": 33,
+      "kode": "RPB",
+      "nama": "Rekayasa Pertanian dan Biosistem",
+      "singkatan": "RPB",
+      "level": "PROGRAM_STUDI",
+      "parentId": 6
+    },
+    {
+      "id": 34,
+      "kode": "TI",
+      "nama": "Teknik Informatika",
+      "singkatan": "TI",
+      "level": "PROGRAM_STUDI",
+      "parentId": 6
+    },
+    {
+      "id": 35,
+      "kode": "SI",
+      "nama": "Sistem Informasi",
+      "singkatan": "SI",
+      "level": "PROGRAM_STUDI",
+      "parentId": 6
+    },
+    {
+      "id": 36,
+      "kode": "ES-S3",
+      "nama": "Ekonomi Syariah (S3)",
+      "singkatan": "ES-S3",
+      "level": "PROGRAM_STUDI",
+      "parentId": 7
+    },
+    {
+      "id": 37,
+      "kode": "ES-S2",
+      "nama": "Ekonomi Syariah (S2)",
+      "singkatan": "ES-S2",
+      "level": "PROGRAM_STUDI",
+      "parentId": 7
+    },
+    {
+      "id": 38,
+      "kode": "MJN-S2",
+      "nama": "Manajemen (S2)",
+      "singkatan": "MJN-S2",
+      "level": "PROGRAM_STUDI",
+      "parentId": 7
+    },
+    {
+      "id": 39,
+      "kode": "KPI-S2",
+      "nama": "Komunikasi Penyiaran Islam (S2)",
+      "singkatan": "KPI-S2",
+      "level": "PROGRAM_STUDI",
+      "parentId": 7
+    },
+    {
+      "id": 40,
+      "kode": "HB-S2",
+      "nama": "Hukum Bisnis (S2)",
+      "singkatan": "HB-S2",
+      "level": "PROGRAM_STUDI",
+      "parentId": 7
+    },
+    {
+      "id": 41,
+      "kode": "PAI-S3",
+      "nama": "Pendidikan Agama Islam (S3)",
+      "singkatan": "PAI-S3",
+      "level": "PROGRAM_STUDI",
+      "parentId": 7
+    },
+    {
+      "id": 42,
+      "kode": "TP-S2",
+      "nama": "Teknologi Pendidikan (S2)",
+      "singkatan": "TP-S2",
+      "level": "PROGRAM_STUDI",
+      "parentId": 7
+    },
+    {
+      "id": 43,
+      "kode": "PAI-S2",
+      "nama": "Pendidikan Agama Islam (S2)",
+      "singkatan": "PAI-S2",
+      "level": "PROGRAM_STUDI",
+      "parentId": 7
+    },
+    {
+      "id": 44,
+      "kode": "KM",
+      "nama": "Kesehatan Masyarakat",
+      "singkatan": "KM",
+      "level": "PROGRAM_STUDI",
+      "parentId": 8
+    },
+    {
+      "id": 45,
+      "kode": "GZ",
+      "nama": "Gizi",
+      "singkatan": "GZ",
+      "level": "PROGRAM_STUDI",
+      "parentId": 8
+    }
+  ],
+  "fakultas": [
+    {
+      "id": 1,
+      "kode": "FKIP",
+      "nama": "Fakultas Keguruan dan Ilmu Pendidikan",
+      "singkatan": "FKIP",
+      "unitKerjaId": 2
+    },
+    {
+      "id": 2,
+      "kode": "FH",
+      "nama": "Fakultas Hukum",
+      "singkatan": "FH",
+      "unitKerjaId": 3
+    },
+    {
+      "id": 3,
+      "kode": "FEB",
+      "nama": "Fakultas Ekonomi dan Bisnis",
+      "singkatan": "FEB",
+      "unitKerjaId": 4
+    },
+    {
+      "id": 4,
+      "kode": "FAI",
+      "nama": "Fakultas Agama Islam",
+      "singkatan": "FAI",
+      "unitKerjaId": 5
+    },
+    {
+      "id": 5,
+      "kode": "FTS",
+      "nama": "Fakultas Teknik dan Sains",
+      "singkatan": "FTS",
+      "unitKerjaId": 6
+    },
+    {
+      "id": 6,
+      "kode": "SPS",
+      "nama": "Sekolah Pascasarjana",
+      "singkatan": "SPS",
+      "unitKerjaId": 7
+    },
+    {
+      "id": 7,
+      "kode": "FIK",
+      "nama": "Fakultas Ilmu Kesehatan",
+      "singkatan": "FIK",
+      "unitKerjaId": 8
+    }
+  ],
+  "programStudi": [
+    {
+      "id": 1,
+      "kode": "PVDF",
+      "nama": "Pendidikan Vokasional Desain Fashion",
+      "singkatan": "PVDF",
+      "fakultasId": 1,
+      "unitKerjaId": 9,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 2,
+      "kode": "PMT",
+      "nama": "Pendidikan Matematika",
+      "singkatan": "PMT",
+      "fakultasId": 1,
+      "unitKerjaId": 10,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 3,
+      "kode": "TP",
+      "nama": "Teknologi Pendidikan",
+      "singkatan": "TP",
+      "fakultasId": 1,
+      "unitKerjaId": 11,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 4,
+      "kode": "PM",
+      "nama": "Pendidikan Masyarakat",
+      "singkatan": "PM",
+      "fakultasId": 1,
+      "unitKerjaId": 12,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 5,
+      "kode": "PPG",
+      "nama": "Pendidikan Profesi Guru",
+      "singkatan": "PPG",
+      "fakultasId": 1,
+      "unitKerjaId": 13,
+      "jenjang": "PROFESI"
+    },
+    {
+      "id": 6,
+      "kode": "PBI",
+      "nama": "Pendidikan Bahasa Inggris",
+      "singkatan": "PBI",
+      "fakultasId": 1,
+      "unitKerjaId": 14,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 7,
+      "kode": "IH",
+      "nama": "Ilmu Hukum",
+      "singkatan": "IH",
+      "fakultasId": 2,
+      "unitKerjaId": 15,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 8,
+      "kode": "MJN",
+      "nama": "Manajemen",
+      "singkatan": "MJN",
+      "fakultasId": 3,
+      "unitKerjaId": 16,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 9,
+      "kode": "BD",
+      "nama": "Bisnis Digital",
+      "singkatan": "BD",
+      "fakultasId": 3,
+      "unitKerjaId": 17,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 10,
+      "kode": "PKD",
+      "nama": "Perbankan dan Keuangan Digital",
+      "singkatan": "PKD",
+      "fakultasId": 3,
+      "unitKerjaId": 18,
+      "jenjang": "DIPLOMA_4"
+    },
+    {
+      "id": 11,
+      "kode": "AKT",
+      "nama": "Akuntansi",
+      "singkatan": "AKT",
+      "fakultasId": 3,
+      "unitKerjaId": 19,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 12,
+      "kode": "PI",
+      "nama": "Perdagangan Internasional",
+      "singkatan": "PI",
+      "fakultasId": 3,
+      "unitKerjaId": 20,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 13,
+      "kode": "ES",
+      "nama": "Ekonomi Syariah",
+      "singkatan": "ES",
+      "fakultasId": 4,
+      "unitKerjaId": 21,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 14,
+      "kode": "MHU",
+      "nama": "Manajemen Haji dan Umrah",
+      "singkatan": "MHU",
+      "fakultasId": 4,
+      "unitKerjaId": 22,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 15,
+      "kode": "BKI",
+      "nama": "Bimbingan dan Konseling Pendidikan Islam",
+      "singkatan": "BKI",
+      "fakultasId": 4,
+      "unitKerjaId": 23,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 16,
+      "kode": "KPI",
+      "nama": "Komunikasi dan Penyiaran Islam",
+      "singkatan": "KPI",
+      "fakultasId": 4,
+      "unitKerjaId": 24,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 17,
+      "kode": "AS",
+      "nama": "Ahwal Al Syakshiyah",
+      "singkatan": "AS",
+      "fakultasId": 4,
+      "unitKerjaId": 25,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 18,
+      "kode": "IAT",
+      "nama": "Ilmu Al-Qur`an dan Tafsir",
+      "singkatan": "IAT",
+      "fakultasId": 4,
+      "unitKerjaId": 26,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 19,
+      "kode": "PAI",
+      "nama": "Pendidikan Agama Islam",
+      "singkatan": "PAI",
+      "fakultasId": 4,
+      "unitKerjaId": 27,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 20,
+      "kode": "PGMI",
+      "nama": "Pendidikan Guru Madrasah Ibtidaiyah",
+      "singkatan": "PGMI",
+      "fakultasId": 4,
+      "unitKerjaId": 28,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 21,
+      "kode": "TE",
+      "nama": "Teknik Elektro",
+      "singkatan": "TE",
+      "fakultasId": 5,
+      "unitKerjaId": 29,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 22,
+      "kode": "TM",
+      "nama": "Teknik Mesin",
+      "singkatan": "TM",
+      "fakultasId": 5,
+      "unitKerjaId": 30,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 23,
+      "kode": "TS",
+      "nama": "Teknik Sipil",
+      "singkatan": "TS",
+      "fakultasId": 5,
+      "unitKerjaId": 31,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 24,
+      "kode": "IL",
+      "nama": "Ilmu Lingkungan",
+      "singkatan": "IL",
+      "fakultasId": 5,
+      "unitKerjaId": 32,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 25,
+      "kode": "RPB",
+      "nama": "Rekayasa Pertanian dan Biosistem",
+      "singkatan": "RPB",
+      "fakultasId": 5,
+      "unitKerjaId": 33,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 26,
+      "kode": "TI",
+      "nama": "Teknik Informatika",
+      "singkatan": "TI",
+      "fakultasId": 5,
+      "unitKerjaId": 34,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 27,
+      "kode": "SI",
+      "nama": "Sistem Informasi",
+      "singkatan": "SI",
+      "fakultasId": 5,
+      "unitKerjaId": 35,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 28,
+      "kode": "ES-S3",
+      "nama": "Ekonomi Syariah (S3)",
+      "singkatan": "ES-S3",
+      "fakultasId": 6,
+      "unitKerjaId": 36,
+      "jenjang": "DOKTOR"
+    },
+    {
+      "id": 29,
+      "kode": "ES-S2",
+      "nama": "Ekonomi Syariah (S2)",
+      "singkatan": "ES-S2",
+      "fakultasId": 6,
+      "unitKerjaId": 37,
+      "jenjang": "MAGISTER"
+    },
+    {
+      "id": 30,
+      "kode": "MJN-S2",
+      "nama": "Manajemen (S2)",
+      "singkatan": "MJN-S2",
+      "fakultasId": 6,
+      "unitKerjaId": 38,
+      "jenjang": "MAGISTER"
+    },
+    {
+      "id": 31,
+      "kode": "KPI-S2",
+      "nama": "Komunikasi Penyiaran Islam (S2)",
+      "singkatan": "KPI-S2",
+      "fakultasId": 6,
+      "unitKerjaId": 39,
+      "jenjang": "MAGISTER"
+    },
+    {
+      "id": 32,
+      "kode": "HB-S2",
+      "nama": "Hukum Bisnis (S2)",
+      "singkatan": "HB-S2",
+      "fakultasId": 6,
+      "unitKerjaId": 40,
+      "jenjang": "MAGISTER"
+    },
+    {
+      "id": 33,
+      "kode": "PAI-S3",
+      "nama": "Pendidikan Agama Islam (S3)",
+      "singkatan": "PAI-S3",
+      "fakultasId": 6,
+      "unitKerjaId": 41,
+      "jenjang": "DOKTOR"
+    },
+    {
+      "id": 34,
+      "kode": "TP-S2",
+      "nama": "Teknologi Pendidikan (S2)",
+      "singkatan": "TP-S2",
+      "fakultasId": 6,
+      "unitKerjaId": 42,
+      "jenjang": "MAGISTER"
+    },
+    {
+      "id": 35,
+      "kode": "PAI-S2",
+      "nama": "Pendidikan Agama Islam (S2)",
+      "singkatan": "PAI-S2",
+      "fakultasId": 6,
+      "unitKerjaId": 43,
+      "jenjang": "MAGISTER"
+    },
+    {
+      "id": 36,
+      "kode": "KM",
+      "nama": "Kesehatan Masyarakat",
+      "singkatan": "KM",
+      "fakultasId": 7,
+      "unitKerjaId": 44,
+      "jenjang": "SARJANA"
+    },
+    {
+      "id": 37,
+      "kode": "GZ",
+      "nama": "Gizi",
+      "singkatan": "GZ",
+      "fakultasId": 7,
+      "unitKerjaId": 45,
+      "jenjang": "SARJANA"
+    }
+  ]
+}

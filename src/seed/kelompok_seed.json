@@ -1,0 +1,28 @@
+{
+  "kelompok": [
+    {
+      "kode": "01",
+      "nama": "Kuliah",
+      "jenisUserId": 3,
+      "jenisTransaksiId": 3
+    },
+    {
+      "kode": "02",
+      "nama": "Wisuda",
+      "jenisUserId": 1,
+      "jenisTransaksiId": 3
+    },
+    {
+      "kode": "03",
+      "nama": "Formulir",
+      "jenisUserId": 2,
+      "jenisTransaksiId": 3
+    },
+    {
+      "kode": "100",
+      "nama": "KIP Kuliah",
+      "jenisUserId": 1,
+      "jenisTransaksiId": 3
+    }
+  ]
+}

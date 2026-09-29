@@ -1,0 +1,979 @@
+{
+  "periode": [
+    {
+      "kode": "20253",
+      "namaPeriode": "2025 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20252",
+      "namaPeriode": "2025 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20251",
+      "namaPeriode": "2025 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20243",
+      "namaPeriode": "2024 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20242",
+      "namaPeriode": "2024 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20241",
+      "namaPeriode": "2024 Ganjil",
+      "isAktif": true
+    },
+    {
+      "kode": "20233",
+      "namaPeriode": "2023 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20232",
+      "namaPeriode": "2023 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20231",
+      "namaPeriode": "2023 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20223",
+      "namaPeriode": "2022 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20222",
+      "namaPeriode": "2022 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20221",
+      "namaPeriode": "2022 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20213",
+      "namaPeriode": "2021 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20212",
+      "namaPeriode": "2021 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20211",
+      "namaPeriode": "2021 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20203",
+      "namaPeriode": "2020 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20202",
+      "namaPeriode": "2020 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20201",
+      "namaPeriode": "2020 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20193",
+      "namaPeriode": "2019 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20192",
+      "namaPeriode": "2019 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20191",
+      "namaPeriode": "2019 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20183",
+      "namaPeriode": "2018 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20182",
+      "namaPeriode": "2018 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20181",
+      "namaPeriode": "2018 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20173",
+      "namaPeriode": "2017 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20172",
+      "namaPeriode": "2017 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20171",
+      "namaPeriode": "2017 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20163",
+      "namaPeriode": "2016 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20162",
+      "namaPeriode": "2016 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20161",
+      "namaPeriode": "2016 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20153",
+      "namaPeriode": "2015 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20152",
+      "namaPeriode": "2015 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20151",
+      "namaPeriode": "2015 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20143",
+      "namaPeriode": "2014 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20142",
+      "namaPeriode": "2014 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20141",
+      "namaPeriode": "2014 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20133",
+      "namaPeriode": "2013 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20132",
+      "namaPeriode": "2013 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20131",
+      "namaPeriode": "2013 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20123",
+      "namaPeriode": "2012 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20122",
+      "namaPeriode": "2012 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20121",
+      "namaPeriode": "2012 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20113",
+      "namaPeriode": "2011 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20112",
+      "namaPeriode": "2011 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20111",
+      "namaPeriode": "2011 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20103",
+      "namaPeriode": "2010 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20102",
+      "namaPeriode": "2010 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20101",
+      "namaPeriode": "2010 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20093",
+      "namaPeriode": "2009 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20092",
+      "namaPeriode": "2009 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20091",
+      "namaPeriode": "2009 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20083",
+      "namaPeriode": "2008 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20082",
+      "namaPeriode": "2008 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20081",
+      "namaPeriode": "2008 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20073",
+      "namaPeriode": "2007 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20072",
+      "namaPeriode": "2007 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20071",
+      "namaPeriode": "2007 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20063",
+      "namaPeriode": "2006 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20062",
+      "namaPeriode": "2006 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20061",
+      "namaPeriode": "2006 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20053",
+      "namaPeriode": "2005 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20052",
+      "namaPeriode": "2005 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20051",
+      "namaPeriode": "2005 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20043",
+      "namaPeriode": "2004 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20042",
+      "namaPeriode": "2004 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20041",
+      "namaPeriode": "2004 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20033",
+      "namaPeriode": "2003 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20032",
+      "namaPeriode": "2003 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20031",
+      "namaPeriode": "2003 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20023",
+      "namaPeriode": "2002 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20022",
+      "namaPeriode": "2002 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20021",
+      "namaPeriode": "2002 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20013",
+      "namaPeriode": "2001 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20012",
+      "namaPeriode": "2001 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20011",
+      "namaPeriode": "2001 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "20003",
+      "namaPeriode": "2000 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "20002",
+      "namaPeriode": "2000 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "20001",
+      "namaPeriode": "2000 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19993",
+      "namaPeriode": "1999 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19992",
+      "namaPeriode": "1999 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19991",
+      "namaPeriode": "1999 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19983",
+      "namaPeriode": "1998 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19982",
+      "namaPeriode": "1998 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19981",
+      "namaPeriode": "1998 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19973",
+      "namaPeriode": "1997 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19972",
+      "namaPeriode": "1997 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19971",
+      "namaPeriode": "1997 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19963",
+      "namaPeriode": "1996 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19962",
+      "namaPeriode": "1996 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19961",
+      "namaPeriode": "1996 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19953",
+      "namaPeriode": "1995 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19952",
+      "namaPeriode": "1995 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19951",
+      "namaPeriode": "1995 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19943",
+      "namaPeriode": "1994 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19942",
+      "namaPeriode": "1994 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19941",
+      "namaPeriode": "1994 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19933",
+      "namaPeriode": "1993 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19932",
+      "namaPeriode": "1993 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19931",
+      "namaPeriode": "1993 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19923",
+      "namaPeriode": "1992 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19922",
+      "namaPeriode": "1992 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19921",
+      "namaPeriode": "1992 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19913",
+      "namaPeriode": "1991 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19912",
+      "namaPeriode": "1991 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19911",
+      "namaPeriode": "1991 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19903",
+      "namaPeriode": "1990 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19902",
+      "namaPeriode": "1990 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19901",
+      "namaPeriode": "1990 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19893",
+      "namaPeriode": "1989 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19892",
+      "namaPeriode": "1989 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19891",
+      "namaPeriode": "1989 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19883",
+      "namaPeriode": "1988 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19882",
+      "namaPeriode": "1988 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19881",
+      "namaPeriode": "1988 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19873",
+      "namaPeriode": "1987 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19872",
+      "namaPeriode": "1987 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19871",
+      "namaPeriode": "1987 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19863",
+      "namaPeriode": "1986 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19862",
+      "namaPeriode": "1986 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19861",
+      "namaPeriode": "1986 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19853",
+      "namaPeriode": "1985 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19852",
+      "namaPeriode": "1985 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19851",
+      "namaPeriode": "1985 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19843",
+      "namaPeriode": "1984 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19842",
+      "namaPeriode": "1984 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19841",
+      "namaPeriode": "1984 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19833",
+      "namaPeriode": "1983 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19832",
+      "namaPeriode": "1983 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19831",
+      "namaPeriode": "1983 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19823",
+      "namaPeriode": "1982 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19822",
+      "namaPeriode": "1982 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19821",
+      "namaPeriode": "1982 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19813",
+      "namaPeriode": "1981 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19812",
+      "namaPeriode": "1981 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19811",
+      "namaPeriode": "1981 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19803",
+      "namaPeriode": "1980 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19802",
+      "namaPeriode": "1980 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19801",
+      "namaPeriode": "1980 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19793",
+      "namaPeriode": "1979 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19792",
+      "namaPeriode": "1979 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19791",
+      "namaPeriode": "1979 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19783",
+      "namaPeriode": "1978 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19782",
+      "namaPeriode": "1978 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19781",
+      "namaPeriode": "1978 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19773",
+      "namaPeriode": "1977 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19772",
+      "namaPeriode": "1977 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19771",
+      "namaPeriode": "1977 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19763",
+      "namaPeriode": "1976 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19762",
+      "namaPeriode": "1976 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19761",
+      "namaPeriode": "1976 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19753",
+      "namaPeriode": "1975 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19752",
+      "namaPeriode": "1975 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19751",
+      "namaPeriode": "1975 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19743",
+      "namaPeriode": "1974 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19742",
+      "namaPeriode": "1974 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19741",
+      "namaPeriode": "1974 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19733",
+      "namaPeriode": "1973 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19732",
+      "namaPeriode": "1973 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19731",
+      "namaPeriode": "1973 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19723",
+      "namaPeriode": "1972 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19722",
+      "namaPeriode": "1972 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19721",
+      "namaPeriode": "1972 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19713",
+      "namaPeriode": "1971 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19712",
+      "namaPeriode": "1971 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19711",
+      "namaPeriode": "1971 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19703",
+      "namaPeriode": "1970 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19702",
+      "namaPeriode": "1970 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19701",
+      "namaPeriode": "1970 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19693",
+      "namaPeriode": "1969 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19692",
+      "namaPeriode": "1969 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19691",
+      "namaPeriode": "1969 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19683",
+      "namaPeriode": "1968 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19682",
+      "namaPeriode": "1968 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19681",
+      "namaPeriode": "1968 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19673",
+      "namaPeriode": "1967 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19672",
+      "namaPeriode": "1967 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19671",
+      "namaPeriode": "1967 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19663",
+      "namaPeriode": "1966 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19662",
+      "namaPeriode": "1966 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19661",
+      "namaPeriode": "1966 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19653",
+      "namaPeriode": "1965 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19652",
+      "namaPeriode": "1965 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19651",
+      "namaPeriode": "1965 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19643",
+      "namaPeriode": "1964 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19642",
+      "namaPeriode": "1964 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19641",
+      "namaPeriode": "1964 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19633",
+      "namaPeriode": "1963 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19632",
+      "namaPeriode": "1963 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19631",
+      "namaPeriode": "1963 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19623",
+      "namaPeriode": "1962 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19622",
+      "namaPeriode": "1962 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19621",
+      "namaPeriode": "1962 Ganjil",
+      "isAktif": false
+    },
+    {
+      "kode": "19613",
+      "namaPeriode": "1961 Pendek",
+      "isAktif": false
+    },
+    {
+      "kode": "19612",
+      "namaPeriode": "1961 Genap",
+      "isAktif": false
+    },
+    {
+      "kode": "19611",
+      "namaPeriode": "1961 Ganjil",
+      "isAktif": false
+    }
+  ]
+}

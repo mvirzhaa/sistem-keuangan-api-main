@@ -1,0 +1,124 @@
+{
+  "jenisTagihan": [
+    {
+      "kode": "1000",
+      "namaJenisTagihan": "UKT KIP Kuliah (A)",
+      "kelompokId": 4,
+      "jenisBiayaNeofeeder": "BIAYA_SEMESTER",
+      "frekuensiId": 10,
+      "eventKegiatanAkademikId": null,
+      "isMahasiswa": true,
+      "isPendaftar": false,
+      "isGenerateKuliah": true,
+      "isSevimaPay": true
+    },
+    {
+      "kode": "1001",
+      "namaJenisTagihan": "UKT KIP Kuliah (B)",
+      "kelompokId": 4,
+      "jenisBiayaNeofeeder": "BIAYA_SEMESTER",
+      "frekuensiId": 10,
+      "eventKegiatanAkademikId": null,
+      "isMahasiswa": true,
+      "isPendaftar": false,
+      "isGenerateKuliah": true,
+      "isSevimaPay": true
+    },
+    {
+      "kode": "1002",
+      "namaJenisTagihan": "UKT KIP Kuliah (C)",
+      "kelompokId": 4,
+      "jenisBiayaNeofeeder": "BIAYA_SEMESTER",
+      "frekuensiId": 10,
+      "eventKegiatanAkademikId": null,
+      "isMahasiswa": true,
+      "isPendaftar": false,
+      "isGenerateKuliah": true,
+      "isSevimaPay": true
+    },
+    {
+      "kode": "1011",
+      "namaJenisTagihan": "Uang Gedung Tahap 1",
+      "kelompokId": 1,
+      "jenisBiayaNeofeeder": null,
+      "frekuensiId": 5,
+      "eventKegiatanAkademikId": null,
+      "isMahasiswa": true,
+      "isPendaftar": true,
+      "isGenerateKuliah": true,
+      "isSevimaPay": true
+    },
+    {
+      "kode": "1012",
+      "namaJenisTagihan": "Uang Gedung Tahap 2",
+      "kelompokId": 1,
+      "jenisBiayaNeofeeder": null,
+      "frekuensiId": 11,
+      "eventKegiatanAkademikId": null,
+      "isMahasiswa": true,
+      "isPendaftar": true,
+      "isGenerateKuliah": true,
+      "isSevimaPay": true
+    },
+    {
+      "kode": "1016",
+      "namaJenisTagihan": "Wakaf Masjid Ibn Khaldun",
+      "kelompokId": 1,
+      "jenisBiayaNeofeeder": "BIAYA_MASUK",
+      "frekuensiId": 5,
+      "eventKegiatanAkademikId": null,
+      "isMahasiswa": false,
+      "isPendaftar": true,
+      "isGenerateKuliah": true,
+      "isSevimaPay": true
+    },
+    {
+      "kode": "1017",
+      "namaJenisTagihan": "Wakaf Uang Tunai",
+      "kelompokId": 2,
+      "jenisBiayaNeofeeder": "BIAYA_SEMESTER",
+      "frekuensiId": 2,
+      "eventKegiatanAkademikId": 14,
+      "isMahasiswa": true,
+      "isPendaftar": false,
+      "isGenerateKuliah": true,
+      "isSevimaPay": true
+    },
+    {
+      "kode": "1018",
+      "namaJenisTagihan": "TOEFL (Unit Pengembangan Bahasa)",
+      "kelompokId": 1,
+      "jenisBiayaNeofeeder": null,
+      "frekuensiId": 1,
+      "eventKegiatanAkademikId": null,
+      "isMahasiswa": true,
+      "isPendaftar": false,
+      "isGenerateKuliah": true,
+      "isSevimaPay": true
+    },
+    {
+      "kode": "1020",
+      "namaJenisTagihan": "SPP",
+      "kelompokId": 1,
+      "jenisBiayaNeofeeder": null,
+      "frekuensiId": 10,
+      "eventKegiatanAkademikId": null,
+      "isMahasiswa": true,
+      "isPendaftar": true,
+      "isGenerateKuliah": true,
+      "isSevimaPay": true
+    },
+    {
+      "kode": "1022",
+      "namaJenisTagihan": "SPP Cuti Akademik",
+      "kelompokId": 1,
+      "jenisBiayaNeofeeder": "BIAYA_SEMESTER",
+      "frekuensiId": 10,
+      "eventKegiatanAkademikId": 1,
+      "isMahasiswa": true,
+      "isPendaftar": false,
+      "isGenerateKuliah": true,
+      "isSevimaPay": true
+    }
+  ]
+}

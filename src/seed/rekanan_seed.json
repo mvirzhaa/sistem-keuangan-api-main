@@ -1,0 +1,60 @@
+{
+  "rekanan": [
+    {
+      "id": 1,
+      "nama": "Baznas Jawa Barat",
+      "kota": "Jawa Barat",
+      "telepon": null,
+      "email": null
+    },
+    {
+      "id": 2,
+      "nama": "Baznas Pusat",
+      "kota": "Pusat",
+      "telepon": null,
+      "email": null
+    },
+    {
+      "id": 3,
+      "nama": "Fakultas Ekonomi dan Bisnis",
+      "kota": "Kota Bogor",
+      "telepon": null,
+      "email": null
+    },
+    {
+      "id": 4,
+      "nama": "PUSLAPDIK",
+      "kota": "D.K.I Jakarta",
+      "telepon": null,
+      "email": null
+    },
+    {
+      "id": 5,
+      "nama": "Pancakarsa",
+      "kota": "Kabupaten Bogor",
+      "telepon": null,
+      "email": null
+    },
+    {
+      "id": 6,
+      "nama": "Pemerintah Kota Bogor",
+      "kota": "Kota Bogor",
+      "telepon": null,
+      "email": null
+    },
+    {
+      "id": 7,
+      "nama": "UPZ",
+      "kota": "D.K.I Jakarta",
+      "telepon": null,
+      "email": null
+    },
+    {
+      "id": 8,
+      "nama": "Universitas Ibn Khaldun",
+      "kota": "Kota Bogor",
+      "telepon": null,
+      "email": null
+    }
+  ]
+}
