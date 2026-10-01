@@ -33,6 +33,64 @@ const baseOptions = {
           bearerFormat: "JWT",
         },
       },
+      schemas: {
+        ErrorResponse: {
+          type: "object",
+          properties: {
+            message: {
+              type: "string",
+              example: "Terjadi kesalahan pada server",
+            },
+            errors: {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  field: { type: "string" },
+                  message: { type: "string" },
+                  value: { type: "string" },
+                },
+              },
+            },
+          },
+        },
+        JenisTransaksi: {
+          type: "object",
+          properties: {
+            id: { type: "integer", example: 1 },
+            kode: { type: "string", example: "TRX-01" },
+            nama: { type: "string", example: "Pembayaran Kuliah" },
+            formatKodeTransaksi: { type: "string", example: "TRX-{YYYY}{MM}{DD}-{RANDOM}" },
+            createdAt: { type: "string", format: "date-time" },
+            updatedAt: { type: "string", format: "date-time" },
+          },
+        },
+        KelompokWithRelations: {
+          type: "object",
+          properties: {
+            id: { type: "integer", example: 1 },
+            kode: { type: "string", example: "01" },
+            nama: { type: "string", example: "Kelompok Reguler" },
+            jenisUserId: { type: "integer", example: 1 },
+            jenisTransaksiId: { type: "integer", example: 1 },
+            jenisUser: {
+              type: "object",
+              properties: {
+                id: { type: "integer" },
+                nama: { type: "string" },
+              },
+            },
+            jenisTransaksi: {
+              type: "object",
+              properties: {
+                id: { type: "integer" },
+                kode: { type: "string" },
+                nama: { type: "string" },
+              },
+            },
+          },
+        },
+      },
       responses: {
         UnauthorizedError: {
           description: "Unauthorized",

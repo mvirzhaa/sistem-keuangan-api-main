@@ -10,6 +10,7 @@
     "prisma": "prisma",
     "prisma:generate": "npx prisma generate",
     "db:seed": "tsx src/seed/seed.ts",
+    "seed:users": "tsx src/seed/seedAllRoles.ts",
     "create-superadmin": "tsx src/seed/createSuperAdmin.ts",
     "generate:swagger": "tsx src/config/generate-swagger.ts",
     "swagger:serve": "swagger-ui-serve swagger.json",
